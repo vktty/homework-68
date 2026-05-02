@@ -94,7 +94,6 @@ export class AuthService {
 		{ email, password }: Pick<IUser, 'email' | 'password'>,
 	) {
 		const resultValidation = validationResult(req);
-
 		if (!resultValidation.isEmpty()) {
 			throw new ValidationError(
 				'Validation failed',

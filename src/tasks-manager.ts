@@ -18,6 +18,7 @@ export const createApp = ({ logFilePath }: IApp) => {
 		methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'],
 		optionsSuccessStatus: 200,
 	};
+	app.set('trust proxy', 1);
 	app.use(cors(corsOrigins));
 
 	app.use('/static', express.static(staticPath));
@@ -28,7 +29,7 @@ export const createApp = ({ logFilePath }: IApp) => {
 
 	app.get('/', (req: IExtendedRequest, res: Response) => {
 		res.status(StatusCodes.OK).json({
-			message: `This is Tasks Manager's home page, ${staticPath}`,
+			message: `This is Tasks Manager's home page`,
 		});
 	});
 

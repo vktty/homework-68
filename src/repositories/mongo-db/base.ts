@@ -29,9 +29,11 @@ export abstract class BaseRepository implements IRepository {
 		query: Record<string, string>,
 	): Promise<T[]> {
 		const collection = this.db.collection(this.resource);
+
 		const result = await collection
 			.find(query, { projection: { _id: 0 } })
 			.toArray();
+
 		return result as T[];
 	}
 	public async findById<T>(id: string): Promise<T> {
