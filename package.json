@@ -6,7 +6,8 @@
 	"scripts": {
 		"build": "tsc",
 		"start": "node dist/index.js",
-		"start:db": "json-server ./public/db.json --port 26285"
+		"start:db": "json-server ./public/db.json --port 26285",
+		"compose": "docker-compose up --build"
 	},
 	"keywords": [],
 	"author": "",
